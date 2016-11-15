@@ -2,6 +2,9 @@ import requests
 import secrets
 import math
 
+from PIL import Image
+from StringIO import StringIO
+
 def get_access_token():
 	"""
 	Make a POST call to https://api.yelp.com/oauth2/token with the client ID and

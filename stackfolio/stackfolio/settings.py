@@ -39,10 +39,17 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'cache_table_stackfolio',
+    }
+}
+
 ROOT_URLCONF = 'stackfolio.urls'
 
 WSGI_APPLICATION = 'stackfolio.wsgi.application'
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -60,7 +67,7 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
-}"""
+}
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
