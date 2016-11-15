@@ -50,12 +50,14 @@
 
 <div class='row'>
 	<div class='masonry'>
-		{% for name, url in image_dict.items %}
+		{% for name, tuple in image_dict.items %}
 			<div id='grid-selector' class='item-200'>
 				<div class='hovereffect'>
-					<img src="{{url}}" class='img-responsive' />
+					<img src="{{tuple.0}}" class='img-responsive' />
 					<div class='overlay'>
-						<h2>{{name}}</h2>
+						<a href="{{tuple.1}}" target="_blank" style="text-decoration:none;">
+							<h2>{{name}}</h2>
+						</a>
 					</div>
 				</div>
 			</div>

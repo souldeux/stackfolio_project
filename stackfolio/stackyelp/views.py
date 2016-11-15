@@ -14,7 +14,7 @@ def home(request):
 		
 		image_dict = {}
 		for r in results:
-			image_dict[r['name']] = r['image_url']
+			image_dict[r['name']] = (r['image_url'],r['url'])
 
 		return render(request, 'stackyelp/home.html', {
 				'image_dict':image_dict,
